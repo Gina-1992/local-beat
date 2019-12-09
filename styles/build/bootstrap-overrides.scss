@@ -1,0 +1,49 @@
+/*!
+ * Bootstrap overrides - selection of scss files needed for the project.
+ */
+
+ //colour overrides 
+
+ $primary: #029fdf;
+ $secondary: #2c2a29;
+ $body-color: $secondary;
+ $dark: $secondary;
+
+
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+//@import "tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+//@import "transitions";
+@import "bootstrap/dropdown";
+@import "bootstrap/button-group";
+@import "bootstrap/input-group";
+@import "bootstrap/custom-forms";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
+@import "bootstrap/card";
+//@import "breadcrumb";
+//@import "pagination";
+//@import "badge";
+//@import "jumbotron";
+//@import "alert";
+//@import "progress";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+//@import "close";
+@import "bootstrap/toasts";
+//@import "modal";
+//@import "tooltip";
+//@import "popover";
+//@import "carousel";
+//@import "spinners";
+@import "bootstrap/utilities";
+@import "bootstrap/print";

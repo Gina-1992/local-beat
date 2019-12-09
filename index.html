@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <title>Avon and Somerset Police Web App</title>
+
+        <!--styles-->
+        <link rel="stylesheet" href="styles/src/main.css">
+        <link rel="stylesheet" href="styles/src/default.min.css">
+        <script src="https://kit.fontawesome.com/fd736dc876.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    </head> 
+    <body> 
+
+        <!--====== Navigation bar/header ======-->
+       <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container container-header">
+                    <a class="navbar-brand">
+                        <img class="logo" src="images/assp-logo.png" alt="Avon and Somerset Police logo">
+                    </a>
+                    <form class="form-inline" method="get" action="" id="search-form" role="search">
+                        <label for="search" class="sr-only"></label>
+                        <input class="form-control" type="text" name="search" placeholder="Search">
+                        <button class="btn btn-primary search-icon" type="submit"><i class="fas fa-search"></i></button>
+                    </form>  
+            </div>           
+            </nav>
+       </header>
+
+       <div id="content-container"></div>
+
+       <script id="local-beat-content" type="text/x-handlebars-template">
+            <main role="main">
+
+                 <!--====== Introduction ======-->
+
+
+                <div class="container container-map">
+                    <h2 class="text-center intro">{{beat.introText}}</h2>
+                    <div class="row justify-content-center">
+                        <div role="application" id="map"></div>
+                    </div>
+                </div>
+
+                 <!--====== Local police content ======-->
+
+                <section class="local local-police">
+                    <div class="container container-officers">
+                            <h2 class="text-center pt-60 pb-60">Your local police</h2>
+                        <div class="row">
+                                {{#each beat.officers}} 
+                            <div class="card-group col-12 col-sm-6 col-md-6 col-lg-3 ">
+                                <div class="card mb-4">
+                                        <img src="images/{{this.image}}.jpg" class="card-img-top" alt="{{this.name}} profile image">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{this.name}}</h5>
+                                        <p class="card-text">{{this.role}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>   
+                    </div>    
+                </section>
+
+                <!--====== Local priorities content ======-->
+        
+                <section class="local local-priorities">
+                    <div class="container container-officers">
+
+                        <h2 class="text-center pt-60 pb-60">Our priorities</h2>
+                        <div class="row">
+                                {{#each beat.priorities}} 
+
+                            <div class="mb-4 col-12 col-sm-12 col-md-6 col-lg-4">
+                                <div class="card card-sml">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{this.title}}</h5>
+                                        <p class="card-text">Updated on {{this.updated}}</p>
+                                        <a class="btn btn-primary" href="https://www.avonandsomerset.police.uk{{this.path}}">View more</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            </div>
+                        
+                        </div>
+                </section>
+
+            </main>
+        </script>
+
+        <!--====== Footer ======-->
+
+        <footer class="mt-90 mb-30">
+            <hr>
+            <p class="text-center">Copyright © 2019 Avon and Somerset Police. All Rights Reserved.</p>
+        </footer>
+        
+
+        <!--scripts-->
+       
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/handlebars.min-v4.5.3.js"></script>
+        <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+        <script src="js/script.js"></script>
+        <script async="false" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGVm4tStxmeEOdKhTGuN9uLYv2tzRAUWE&callback=initMap"> </script>
+    </body>
+
+</html>
